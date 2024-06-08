@@ -1,0 +1,797 @@
+@charset "utf-8";
+
+/*  モバイル用  */
+.hamburger{
+    display: none;
+}
+/*　ローディング　*/
+.loader-bg {
+width: 100vw;
+height: 100vh;
+position: fixed;
+top: 0;
+left: 0;
+z-index: 9999;
+background-color: skyblue;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.loader {
+color: #ffffff;
+font-size: 90px;
+text-indent: -9999em;
+overflow: hidden;
+width: 1em;
+height: 1em;
+border-radius: 50%;
+margin: 72px auto;
+position: relative;
+-webkit-transform: translateZ(0);
+-ms-transform: translateZ(0);
+transform: translateZ(0);
+-webkit-animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+}
+@-webkit-keyframes load6 {
+0% {
+  box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+}
+5%,
+95% {
+  box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+}
+10%,
+59% {
+  box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+}
+20% {
+  box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+}
+38% {
+  box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+}
+100% {
+  box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+}
+}
+@keyframes load6 {
+0% {
+  box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+}
+5%,
+95% {
+  box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+}
+10%,
+59% {
+  box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+}
+20% {
+  box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+}
+38% {
+  box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+}
+100% {
+  box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+}
+}
+@-webkit-keyframes round {
+0% {
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+100% {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+}
+@keyframes round {
+0% {
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+100% {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+}
+
+
+/* ハンバーガーメニュー */
+.list h1{
+margin-top: 5px;
+margin-bottom: 0;
+margin-left: 1%;
+}
+.list h1 a{
+color: white;
+text-decoration: none;
+}
+.list h2{
+text-align: center;
+font-size: 25px;
+font-weight: bold;
+margin: 40px 0 40px 0;
+}
+.btn{
+position:fixed;
+top: 8px;
+right: 0;
+width: 40px;
+height: 40px;
+z-index: 9;
+background-color: skyblue; /* バックグラウンドカラー */
+}
+.btn i{
+position: absolute;
+left: 5px;
+width: 25px;
+height: 2px;
+background-color: white; /* 線の色 */
+transition: .5s;
+} 
+.btn i:nth-of-type(1){
+top: 12px;
+}
+.btn i:nth-of-type(2){
+top: 20px;
+}
+.btn i:nth-of-type(3){
+top: 28px;
+}
+.btn.active i:nth-of-type(1){
+transform: translateY(8px) rotate(45deg);
+}
+.btn.active i:nth-of-type(2){
+opacity: 0;
+}
+.btn.active i:nth-of-type(3){
+transform: translateY(-8px) rotate(-45deg);
+}
+.block{
+position: fixed;
+bottom: 0;
+top: 0;
+left: -120%;
+background-color: skyblue;
+color: white;
+width: 100%;
+height: 100%;
+pointer-events: none;
+transition: .2s;
+z-index: 7;
+}
+.block.active{
+left: -20%;
+opacity: 1;
+pointer-events: auto;
+}
+.list{
+position: absolute;
+top: 0;
+right: 0;
+width: 80%;
+height: 100%;
+}
+.list ul{
+list-style:none;
+height: 100%;
+width: 90%;
+margin: auto;
+margin-top: 30px;
+list-style: none;
+padding: 0px;
+}
+.list li{
+text-align: left;
+font-size: 15px;
+padding: 0px 0px 0px 15px;
+line-height: 40px;
+}
+.list ul li h5{
+margin-bottom:0px;
+}
+.list ul li a{
+display: block;
+color:white;
+text-decoration:none;
+font-size: 25px;
+margin: 0 0 0 0;
+width: 100%;
+height: 100%;
+}
+.list ul li img{
+width: 20px;
+height: 20px;
+}
+
+/*  ここまで  */
+
+body{
+margin: 0;
+}
+header{
+background-color: skyblue;
+width: 100%;
+display: flex;
+position: fixed;
+margin-bottom: 5px;
+padding: 10px 0px 10px 0px;
+top: 0;
+z-index: 9;
+}
+header h1{
+margin-top: 0;
+margin-bottom: 0;
+margin-left: 1%;
+}
+header h1 a{
+color: white;
+text-decoration: none;
+}
+.navbar{
+margin: auto;
+}
+.navbar ul{
+display: flex;
+justify-content: center;
+margin-bottom: 5px;
+margin-top: 0;
+}
+.navbar ul li{
+margin:0px 80px 0px 80px;
+list-style: none;
+}
+.navbar ul li a{
+text-decoration: none;
+color: white;
+font-weight: bold;
+font-size: 20px;
+}
+
+.top{
+    margin-top: 75px;
+}
+.subtitle{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 50px;
+    margin-top: -40px;
+    padding-top: 70px;
+    color: deepskyblue;
+    position: relative;
+}
+.subtitle:after {
+    position: absolute;
+    top: 120px;
+    bottom: 0;
+    left: 44%;
+    width: 12.5%;
+    height: 6px;
+    content: '';
+    border-radius: 3px;
+    background-image: -webkit-gradient(linear, right top, left top, from(#2af598), to(#009efd));
+    background-image: -webkit-linear-gradient(right, #2af598 0%, #009efd 100%);
+    background-image: linear-gradient(to left, #2af598 0%, #009efd 100%);
+  }
+a{
+    text-decoration: none;
+    color: royalblue;
+}
+
+/* about */
+.about{
+    width: 52%;
+    margin: auto;
+}
+.aboutpic{
+    width: 210px;
+}
+.aboutpic img{
+    width: 100%;
+}
+.about-s{
+    display: flex;
+    justify-content: center;
+}
+.myname h2{
+    font-size: 25px;
+    margin: 0 0 10px 30px;
+}
+.myname p{
+    margin: 0 0 0 30px;
+    width: 570px;
+}
+.myname p a:hover{
+    color: skyblue;
+}
+.myname h2 button{
+    width: 40px;
+    height: 40px;
+}
+.myname h2 img{
+    width: 40px;
+    height: 40px;
+}
+hr{
+    width: 570px;
+    margin-left: 30px;
+}
+.topicline{
+    width: 100%;
+    margin: 0 0 0 0;
+}
+
+/* 写真3枚 */
+.underpic{
+    display: flex;
+    width: 100%;
+    margin-bottom: 50px;
+    z-index: 1;
+    pointer-events: none;
+}
+.love{
+    width: 30%;
+    margin: 30px 0 0 0;
+    z-index: 1;
+}
+.love-s{
+    width: 30%;
+    margin: 30px 40px 0 40px;
+}
+.lovepic img{
+    width: 100%;
+}
+.lovepic{
+    position: relative;
+}
+.lovepic h2{
+    position: absolute;
+    margin-top: 0;
+    top: 10px;
+    left: 15px;
+    color: white;
+    z-index: 7;
+}
+.lovepic p{
+    margin: 0 0 0 0;
+    position: relative;
+}
+.aboutline hr{
+    width: 100%;
+    border: 1px dashed;
+    margin: 0 0 0 0;
+}
+.loveimg img{
+    position: relative;
+}
+.loveimg p{
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+/* サービス */
+
+.service{
+    width: 52%;
+    margin: auto;
+}
+.servicepic{
+    width: 230px;
+    margin-right: 10px
+}
+.servicepic-s{
+    width: 230px;
+    margin-right: 10px
+}
+.servicepic img{
+    width: 100%;
+}
+.servicepic-s img{
+    width: 100%;
+}
+.topic{
+    display: flex;
+    width: 100%;
+}
+.topic h2{
+    margin: 0 0 0 0;
+    margin-bottom: 2.5%;
+}
+.detail{
+    width: 81%;
+}
+.detail p a:hover{
+    color: skyblue;
+}
+p{
+    margin: 0 0 0 0;
+    line-height: 22px;
+}
+.detail_btn{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 10px 0 0 0;
+}
+.detail_btn a{
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    width: 150px;
+    height: 30px;
+    background-color: lightpink;
+    color: white;
+    border: none;
+    margin-top: 15px;
+    margin-left: 20px;
+}
+.detail_btn a:hover{
+    transform: scale(1.2);
+}
+.serviceline hr{
+    width: 100%;
+    border: 1px dashed;
+    margin: 20px 0 0 0;
+}
+
+/* スキル */
+.skills{
+    width: 52%;
+    margin: auto;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+.skill h2{
+    font-size: 25px;
+    margin: 30px 0 0 0;
+}
+.skill p{
+    margin: 0 0 0 0;
+}
+
+/*    クリックヒア      */
+.detail_btn a{   
+    animation-name:rhythm;	
+    animation-delay:0s;		
+    animation-duration: 2s;	
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite; 
+}
+footer{
+    background-color: skyblue;
+    color: white;
+    text-align: center;
+    width: 100%;
+    margin-top: 80px;
+    padding-bottom: env(safe-area-inset-bottom);
+}
+ 
+@keyframes rhythm {
+    0% {
+        transform: scale(1);
+    }
+ 
+    40% {
+        transform: scale(1);
+    }
+ 
+    50% {
+        transform: scale(1.06);
+    }
+    
+    60% {
+        transform: scale(1);
+    }
+     
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    /*  モバイル用  */
+    .hamburger{
+        display: block;
+    }
+    header{
+        background-color: skyblue;
+        width: 100%;
+        display: flex;
+        position: fixed;
+        padding: 5px 0px 5px 0px;
+        top: 0;
+        z-index: 9;
+    }
+    .navbar{
+        display: none;
+    }
+
+    .top{
+        margin-top: 65px;
+    }
+    .subtitle{
+        text-align: center;
+        font-size: 35px;
+        margin-bottom: 30px;
+        margin-top: -40px;
+        padding-top: 60px;
+        color: deepskyblue;
+        position: relative;
+    }
+    .subtitle:after {
+        position: absolute;
+        top: 110px;
+        bottom: 0;
+        left: 28%;
+        width: 45%;
+        height: 6px;
+        content: '';
+        border-radius: 3px;
+        background-image: -webkit-gradient(linear, right top, left top, from(#2af598), to(#009efd));
+        background-image: -webkit-linear-gradient(right, #2af598 0%, #009efd 100%);
+        background-image: linear-gradient(to left, #2af598 0%, #009efd 100%);
+      }
+    
+    /* about */
+    .about{
+        width: 90%;
+    }
+    .aboutpic{
+        width: 150px;
+        margin: auto;
+    }
+    .aboutpic img{
+        width: 100%;
+    }
+    .about-s{
+        display: block;
+    }
+    .myname h2{
+        margin: 0 0 20px 0;
+        text-align: center;
+    }
+    .myname p{
+        margin: auto;
+        width: 95%;
+    }
+    hr{
+        width: 95%;
+        margin: auto;
+    }
+    .topicline{
+        width: 95%;
+        margin: auto;
+    }
+    
+    /* 写真3枚 */
+    .underpic{
+        display: block;
+        margin-bottom: 20px;
+        z-index: 1;
+        margin-top: 50px;
+    }
+    .love{
+        width: 100%;
+        z-index: 1;
+    }
+    .love-s{
+        width:100%;
+        margin: 0 0 0 0;
+    }
+    .loveimg{
+        width: 60%;
+        margin: auto;
+    }
+    .loveimg img{
+        width: 100%;
+        margin: auto;
+    }
+    .loveimg div p{
+        font-weight: bold;
+        text-align: center;
+        font-size: 20px;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+    .lovepic{
+        position: relative;
+        margin: 0 0 0 0;
+    }
+    .lovepic h2{
+        position: absolute;
+        margin-top: 0;
+        top: 10px;
+        left: 80px;
+        color: white;
+    }
+    .lovepic p{
+        margin: 0 0 30px 0;
+    }
+    .aboutline hr{
+        width: 100%;
+        border: 1px dashed;
+        margin: 0 0 0 0;
+    }
+    
+    /* サービス */
+    .service{
+        width: 100%;
+        margin: auto;
+    }
+    .servicepic{
+        width: 53%;
+        margin: auto;
+    }
+    .servicepic-s{
+        width: 53%;
+        margin: auto;
+    }
+    .servicepic img{
+        width: 100%;
+    }
+    .servicepic-s img{
+        width: 100%;
+    }
+    .topic{
+        display: block;
+        width: 100%;
+    }
+    .topic h2{
+        margin: 0 0 0 0;
+    }
+    .detail{
+        width: 90%;
+        margin: auto;
+        margin-top: 20px;
+    }
+    .serviceline hr{
+        width: 90%;
+        border: 1px dashed;
+        margin: auto;
+        margin-top: 20px;
+    }    
+
+    /* スキル */
+    .skills{
+        width: 90%;
+        margin: auto;
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 1020px) and (min-width: 767px){
+    /* タブレット用 */
+    .hamburger{
+      display: block;
+    } 
+    header{
+      background-color: skyblue;
+      width: 100%;
+      display: flex;
+      position: fixed;
+      padding: 5px 0px 5px 0px;
+      top: 0;
+      z-index: 9;
+    }
+    .navbar{
+      display: none;
+    }
+
+    .top{
+        margin-top: 65px;
+    }
+    .subtitle{
+        text-align: center;
+        font-size: 35px;
+        margin-bottom: 30px;
+        margin-top: -40px;
+        padding-top: 60px;
+        color: deepskyblue;
+        position: relative;
+    }
+    .subtitle:after {
+        position: absolute;
+        top: 110px;
+        bottom: 0;
+        left: 39.2%;
+        width: 22%;
+        height: 6px;
+        content: '';
+        border-radius: 3px;
+        background-image: -webkit-gradient(linear, right top, left top, from(#2af598), to(#009efd));
+        background-image: -webkit-linear-gradient(right, #2af598 0%, #009efd 100%);
+        background-image: linear-gradient(to left, #2af598 0%, #009efd 100%);
+      }
+    
+    /* about */
+    .about{
+        width: 90%;
+    }
+    .aboutpic{
+        width: 150px;
+        margin: auto;
+    }
+    .aboutpic img{
+        width: 100%;
+    }
+    .about-s{
+        display: block;
+        width: 100%;
+    }
+    .myname h2{
+        margin: 0 0 20px 0;
+        text-align: center;
+    }
+    .myname p{
+        margin: auto;
+        width: 100%;
+    }
+    hr{
+        width: 100%;
+        margin: auto;
+    }
+    .topicline{
+        width: 100%;
+        margin: auto;
+    }
+    .underpic{
+        width: 100%;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+
+    /* サービス */
+    .service{
+        width: 90%;
+        margin: auto;
+    }
+    .servicepic{
+        width: 30%;
+        margin: auto;
+    }
+    .servicepic-s{
+        width: 30%;
+        margin: auto;
+    }
+    .servicepic img{
+        width: 100%;
+    }
+    .servicepic-s img{
+        width: 100%;
+    }
+    .topic{
+        display: block;
+        width: 100%;
+    }
+    .topic h2{
+        margin: 0 0 0 0;
+    }
+    .detail{
+        width: 100%;
+        margin: auto;
+        margin-top: 20px;
+    }
+    .serviceline hr{
+        width: 100%;
+        border: 1px dashed;
+        margin: auto;
+        margin-top: 20px;
+    }    
+    .serviceline{
+        width: 100%;
+        margin: 0 0 0 0;
+    }
+    
+    /* スキル */
+    .skills{
+        width: 90%;
+        margin: auto;
+        margin-bottom: 30px;
+    }
+}
