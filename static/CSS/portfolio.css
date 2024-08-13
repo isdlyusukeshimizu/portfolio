@@ -714,11 +714,11 @@ footer{
         width: 90%;
     }
     .aboutpic{
-        width: 150px;
+        width: 300px;
         margin: auto;
     }
     .aboutpic img{
-        width: 100%;
+        width: 200%;
     }
     .about-s{
         display: block;

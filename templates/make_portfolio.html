@@ -1,0 +1,144 @@
+<!DOCTYPE html> 
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>portfolio</title>
+    <link rel="manifest" href="static/manifest/manifest.webmanifest" />
+    <link rel="apple-touch-icon" sizes="180x180" href="media/icon-192x192.png">
+    <link rel="stylesheet" href="static/CSS/portfolio.css">
+    <link rel="stylesheet" href="static/slick/slick.css">
+    <link rel="stylesheet" href="static/slick/slick-theme.css">
+    <script>
+        window.addEventListener('load', function () {
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register("static/JS/sw.js")
+                    .then(function (registration) {
+                        console.log("serviceWorker registed.");
+                    }).catch(function (error) {
+                        console.warn("serviceWorker error.", error);
+                    });
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="loader-bg">
+        <div class="loader"></div>
+    </div>
+    <header id="home">
+        <h1><a id="link" href="{{ url_for('portfolio') }}" onclick="scrollToTop();"><strong>Portfolio</strong></a></h1>
+        
+        <!--　　　　　ページ内遷移メニュー　　　　　-->
+        <nav class="navbar">
+        </nav>  
+        
+        <div class="hamburger"> <!--  モバイルnone  -->
+            <div class="btn">
+                <i></i>
+                <i></i>
+                <i></i>
+            </div>  
+            <div class="block">
+                <div class="list">
+                    <h1><a class="link_top" id="link_top" href="href="{{ url_for('portfolio') }}"" onclick="scrollToTop();"><strong>Portfolio</strong></a></h1>
+                </div>
+            </div>   
+        </div>
+    </header>
+
+    <img class="top" src="media/IMG_6171.jpg" alt="" style="width: 100%;">
+
+
+<!--　　　　　Docker勉強会　　　　　-->
+<h2 class="subtitle" id="service">Portfolio</h2>
+
+<div class="service">
+    <div class="topic">
+        <div class="detail">
+  
+            <h2>Githubリポジトリ</h2>
+            <a href="https://github.com/isdlyusukeshimizu/testp.git">https://github.com/isdlyusukeshimizu/testp.git</a>
+            <br><br>
+            <h2>開催目的</h2>
+            <p>
+                技術系の知識のアウトプットのために作成しました！
+                制作物や取り組みを載せていきます。
+            </p>
+            <br>
+            <h2>使用技術</h2>
+            <p>
+                <ul>
+                    <li>Frontend: HTML, CSS, JavaScript, jQuery</li>
+                    <li>Backend: Python, Flask, SQLite</li>
+                    <li>Server: AWS, EC2, Route 53, mod_wsgi</li>
+                </ul>
+            </p>
+
+            <br>
+            <h2>アーキテクチャ図</h2>
+            <p>
+                本ポートフォリオをデプロイしたAWSのアーキテクチャ図を記載します。
+               <br>
+		 <img src="media/aws_architecture.png" alt="" style="width: 100%;">
+            </p>
+
+            <br>
+            <h2>機能</h2>
+            <p>
+
+                <ul>
+                    <li>プロフィールページ</li>
+                    <li>経歴ページ</li>
+                    <li>各制作物の説明ページ</li>
+                </ul>
+            </p>
+
+            <br>
+
+        </div>
+    </div>
+</div>
+
+
+    <div class="aboutline">
+        <hr>
+    </div>
+</div>
+
+<footer>
+    <p>2024 Yusuke Shimizu Portfolio</p>
+</footer>
+
+<!--     jQuery     -->
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="static/slick/slick.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.loveimg').slick({
+            autoplay: true,
+            autoplaySpeed: 3000,
+            swipe: true,
+            pauseOnHover: false,
+            pauseOnFocus: false,
+            pauseOnDotsHover: false,
+        });
+    });
+
+    $(function(){
+        $(window).on('load',function(){
+            $('.loader').delay(500).fadeOut(500);
+            $('.loader-bg').delay(800).fadeOut(700);
+        });
+        setTimeout(function(){
+            $('.loader-bg').fadeOut(500);
+        },5000);
+    });
+    </script>
+
+<script src="static/JS/portfolio.js" async></script>
+
+</body>
+</html>

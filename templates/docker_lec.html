@@ -27,17 +27,9 @@
         <div class="loader"></div>
     </div>
     <header id="home">
-        <h1><a id="link" href="javascript:void(0);" onclick="scrollToTop();"><strong>Portfolio</strong></a></h1>
+        <h1><a id="link" href="{{ url_for('portfolio') }}" onclick="scrollToTop();"><strong>Portfolio</strong></a></h1>
         
         <!--　　　　　ページ内遷移メニュー　　　　　-->
-        <nav class="navbar">
-            <ul>
-                <li><a id="link_home" href="{{ url_for('portfolio') }}" onclick="scrollToTop();">Home</a></li>
-                <li><a id="link_about" href="javascript:void(0);" onclick="ScrollWindow('about');">About</a></li>
-                <li><a id="link_service" href="javascript:void(0);" onclick="ScrollWindow('service');">Service</a></li>
-                <li><a id="link_skills" href="javascript:void(0);" onclick="ScrollWindow('skills');">Skills</a></li>
-            </ul>
-        </nav>  
         
         <div class="hamburger"> <!--  モバイルnone  -->
             <div class="btn">
@@ -47,18 +39,7 @@
             </div>  
             <div class="block">
                 <div class="list">
-                    <h1><a class="link_top" id="link_top" href="javascript:void(0);" onclick="scrollToTop();"><strong>Portfolio</strong></a></h1>
-                    <h2>Menu</h2>
-                    <ul>
-                        <li><h5><a class="link_home" id="link_home" href="javascript:void(0);" onclick="scrollToTop();"><img src="media/IMG_home.png" alt=""> Home</a></h5></li>
-                        <li style="padding-left: 0;"><hr></li>
-                        <li><h5><a class="link_about" id="link_about" href="javascript:void(0);" onclick="ScrollWindow('about');"><img src="media/IMG_profile.png" alt=""> About</a></h5></li>
-                        <li style="padding-left: 0;"><hr></li>
-                        <li><h5><a class="link_service" id="link_service" href="javascript:void(0);" onclick="ScrollWindow('service');"><img src="media/IMG_service.png" alt=""> Service</a></h5></li>
-                        <li style="padding-left: 0;"><hr></li>
-                        <li><h5><a class="link_skills" id="link_skills" href="javascript:void(0);" onclick="ScrollWindow('skills');"><img src="media/IMG_skills.png" alt=""> Skills</a></h5></li>
-                        <li style="padding-left: 0;"><hr></li>
-                    </ul>
+                    <h1><a class="link_top" id="link_top" href="{{ url_for('portfolio') }}" onclick="scrollToTop();"><strong>Portfolio</strong></a></h1>
                 </div>
             </div>   
         </div>
@@ -68,70 +49,350 @@
 
 
 <!--　　　　　Docker勉強会　　　　　-->
-<h2 class="subtitle" id="service">Service</h2>
+<h2 class="subtitle" id="service">Docker勉強会</h2>
 
 <div class="service">
     <div class="topic">
         <div class="detail">
-            <h2>Docker勉強会</h2>
+           
+            <p>
+            <img src="media/docker_me4.jpg" alt="docker_me1.jpg" style="width: 100%;">
+            <img src="media/docker_me1.jpg" alt="docker_me2.jpg" style="width: 100%;">
+            <img src="media/docker_me2.jpg" alt="docker_me3.jpg" style="width: 100%;">
+            <img src="media/docker_me3.jpg" alt="docker_me3.jpg" style="width: 100%;">
+            <img src="media/docker_me5.jpg" alt="docker_me3.jpg" style="width: 100%;">
+            </p>
+            <br>
+            <p>docker勉強会の様子です。スライドおよびホワイトボードを使用し、初学者にもわかるように実施しました。</p>
+
+            <h1>Docker勉強会~インプット編~</h1>
             <p>Dockerはエンジニアを志望している学生としては知っておくべき技術であるため、研究室内の学生を対象にHandsonを含めた講習を行いました。研究室内では自身の研究とは別にWebアプリ開発をする学生が多いです。その開発の中でそれぞれのPC環境を統一することは規模が大きくなるにつれて困難になります。今後社会人になることも踏まえてDockerを習得することで利点をより感じてもらえると思いました！</p>
             <br>
 
             <h2>Githubリポジトリ</h2>
-            <br>
-            <h2>開催背景</h2>
+            <a href="https://github.com/isdlyusukeshimizu/docker_lecture">https://github.com/isdlyusukeshimizu/docker_lecture</a>
+            <br><br>
+            <h2>開催背景</h2><br>
             <p>Dockerはエンジニアを志望している学生としては知っておくべき技術であるため研究室内の学生を対象にHandsonを含めた講習を行いました．
                 研究室内では自身の研究とは別にWebアプリ開発をする学生が多いです．その開発の中でそれぞれのPC環境を統一することは人数が多い場合は何とかなりそうですが規模が大きくなるにつれて困難になります．
                 今後社会人になることも踏まえてDockerを習得することで利点をより感じてもらえると思いました！
                 （学校からお金がもらえるのも開催背景にあります笑）</p>
             <br>
-            <h2>Dockerとは？</h2>
+            <h2>Dockerとは？</h2><br>
             <p>コンテナ型仮想化により仮想環境を構築するソフトウェアのことです．
                 情報系なら知っておいた方が有利な技術です．Dockerは業務で使用するイメージがあると思いますが研究やハッカソン，プロジェクトでも使用することができるためとても重宝されています．
                 Dockerの特徴としては以下の3点が挙げられます．
 
 
                 <ul>
-                    <li>超軽量</li>
-                    <li>環境構築と実行にかかる時間が短い．</li>
-                    <li>負荷が小さく高速に動作する</li>
-                    <li>独立した実行環境</li>
-                    <li>ファイルシステム，ネットワークなどがコンテナ間・ホストOS間で分離</li>
-                    <li>一つのホストOSの上に多面な実行環境を構築可能</li>
-                    <li>少ないリソース消費</li>
-                    <li>同一OSのコンテナを複数起動すると，OSイメージは読み込み専用で共有される</li>
-                    <li>コンテナの差分のみディスク上に保持される</li>
+                    <li>超軽量
+                        <ul>
+                            <li>環境構築と実行にかかる時間が短い</li>
+                            <li>負荷が小さく高速に動作する</li>
+                        </ul>
+                    </li>
+                    <li>独立した実行環境
+                        <ul>
+                            <li>ファイルシステム、ネットワークなどがコンテナ間・ホストOS間で分離</li>
+                            <li>一つのホストOSの上に多様な実行環境を構築可能</li>
+                        </ul>
+                    </li>
+                    <li>少ないリソース消費
+                        <ul>
+                            <li>同一OSのコンテナを複数起動すると、OSイメージは読み込み専用で共有される</li>
+                            <li>コンテナの差分のみディスク上に保持される</li>
+                        </ul>
+                    </li>
                 </ul>
+                
             </p>
 
             <br>
-            <h2>Dockerとは？</h2>
-            <p></p>
+            <h2>VM vs コンテナ</h2><br>
+            <p>
+
+                <ul>
+                    <li>VM：完全エミュレート．基本的に物理マシンにできることは仮想マシンでもできる．</li>
+                    <li>Docker：物理層はベースOS上で管理し、プロセスのみ仮想化する．</li>
+                </ul>
+
+
+                <img src="media/docker1.png" alt="docker1.png" style="width: 100%;">
+
+            </p>
 
             <br>
-            <h2>Dockerとは？</h2>
-            <p></p>
+            <h2>アプリケーションと実行環境の一体化</h2><br>
+            <p>
+                <ul>
+                    <li>開発環境と本番環境をパッケージ化し統一できる
+                        <ul>
+                            <li>複数の環境を用意する必要がない</li>
+                            <li>オーバーヘッドの削減</li>
+                            <li>リソースの節約</li>
+                        </ul>
+                    </li>
+                    <li>Docker Engine
+                        <ul>
+                            <li>Dockerを利用するための常駐プログラム</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+
+                <img src="media/docker2.png" alt="docker2.png" style="width: 100%;">
+            </p>
 
             <br>
-            <h2>Dockerとは？</h2>
-            <p></p>
+            <h2>DockerイメージとDockerコンテナ</h2>
+            <p>
+                <ul>
+                    <li>Dockerイメージ
+                        <ul>
+                            <li>コンテナを構成するファイルシステム・アプリケーションの設定をまとめたもの</li>
+                            <li>コンテナを作成する際のテンプレート（設計図）となる</li>
+                        </ul>
+                    </li>
+                    <li>Dockerコンテナ
+                        <ul>
+                            <li>Dockerイメージをもとに作成されるインスタンス</li>
+                            <li>アプリケーションが実際に実行されている状態</li>
+                        </ul>
+                    </li>
+                </ul>    
+                <img src="media/docker3.png" alt="docker1.png" style="width: 100%;">            
+            </p>
 
             <br>
-            <h2>Dockerとは？</h2>
-            <p></p>
+            <h2>Dockerのレイヤ構造</h2><br>
+            <p>
+                <ul>
+                    <li>イメージの共有により軽量化を実現</li>
+                    <li>共有・永続化したいファイルはホストからコンテナにマウント</li>
+                </ul>
+                <img src="media/docker4.png" alt="docker1.png" style="width: 100%;">
+            </p>
 
             <br>
-            <h2>Dockerとは？</h2>
-            <p></p>
+            <h2>Dockerコンテナのライフサイクル</h2><br>
+            <p>
+                <ul>
+                    <li>起動
+                        <ul>
+                            <li>runした後の状態</li>
+                            <li>コンテナ内でアプリケーションが実行中</li>
+                        </ul>
+                    </li>
+                    <li>停止
+                        <ul>
+                            <li>実行中コンテナをユーザが明示的に停止した時</li>
+                            <li>正常・異常を問わずアプリケーションが終了したとき</li>
+                        </ul>
+                    </li>
+                    <li>再実行可能
+                        <ul>
+                            <li>終了時の状態はディスクに残り続ける（→削除しないと肥大化する）</li>
+                        </ul>
+                    </li>
+                    <li>破棄
+                        <ul>
+                            <li>停止中のコンテナは明示的に破棄しない限りディスクに残り続ける</li>
+                            <li>不要なコンテナは削除する</li>
+                            <li>破棄したコンテナは再実行できない</li>
+                        </ul>
+                    </li>
+                </ul>                
+            </p>
 
             <br>
-            <h2>Dockerとは？</h2>
-            <p></p>
+            <h2>docker-compose</h2><br>
+            <p>
+                <ul>
+                    <li>複数コンテナのDockerアプリを定義し、実行するツール</li>
+                    <li>docker-compose.ymlでコンテナやその他の設定を定義</li>
+                    <li>docker-composeコマンドで実行</li>
+                    <li>通常、システムは複数のアプリケーションが関与する
+                        <ul>
+                            <li>Webサーバ、DB、リバースプロキシ、他のアプリなど</li>
+                        </ul>
+                    </li>
+                    <li>Dockerは1コンテナ1プロセス → 複数のコンテナを管理する必要</li>
+                    <li>コンテナが1つの場合でもコマンド入力が楽になる</li>
+                </ul>
+                <img src="media/docker5.png" alt="docker5.png" style="width: 100%;">
+            </p>
 
             <br>
-            <h2>Dockerとは？</h2>
-            <p></p>
+            <h2>Dockerは万能ではない</h2><br>
+            <p>
+                <ul>
+                    <li>Dockerを用いた開発の対象でないケース
+                        <ul>
+                            <li>物理層に近い部分（ハードウェアやKernel）に関わるプロダクト</li>
+                            <li>OSとしての厳格な動作が求められる場合</li>
+                        </ul>
+                    </li>
+                </ul>
+                従来の仮想技術が必要な場合もある．
+                Dockerはあくまでもアプリケーションをデプロイすることに特化した箱である            
+            </p>
+
+            <br>
+            <h2>一旦まとめ</h2><br>
+            <p>
+                <ul>
+                    <li>DockerはホストOS内に独立した実行環境を構築できる</li>
+                    <li>実行環境をカプセル化できる</li>
+                    <li>コンテナはリソース消費が少ないので、より多くの実行環境を同時に提供できる</li>
+                    <li>同じものを繰り返し使うことに適している</li>
+                    <li>Dockerの使用が向いていないケースもある
+                        <ul>
+                            <li>カプセル化できない場合</li>
+                            <li>厳しいセキュリティが求められる場合</li>
+                            <li>ハードウェアに近い層を考慮する場合</li>
+                        </ul>
+                    </li>
+                    <li>エンタープライズでの利用がますます広がる
+                        <ul>
+                            <li>コンテナという特性上、複製や移動、更新が容易で安全</li>
+                            <li>パブリッククラウドがプラットフォームを提供</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+            </p>
+
+            <br>
+            <h1>Docker勉強会~アウトプット編~</h1>
+            <h2>Handsonの内容</h2><br>
+            <p>
+                <ul>
+                    <li>Dockerを用いてログイン画面の環境を構築しよう！ ー Dockerの便利さを知る</li>
+                    <li>Dockerfileを作成してFlaskの環境を構築しよう</li>
+                    <li>docker-compose.ymlファイルを作成しよう</li>
+                    <li>Docker Composeを使用して複数コンテナを作成しよう</li>
+                    <li>Dockerを用いた開発の容易さを体感しよう</li>
+                </ul>
+                <img src="media/docker_demo.jpg" alt="docker1.png" style="width: 100%;">
+                <img src="media/docker7.png" alt="docker1.png" style="width: 100%;">
+            </p>
+
+            <br>
+            <h2>システム構成図およびディレクトリ構成</h2><br>
+            <p>
+                <img src="media/docker8.png" alt="docker1.png" style="width: 100%;">
+                <img src="media/docker9.png" alt="docker1.png" style="width: 100%;">
+            </p>
+
+            <br>
+            <h2>Dockerfileからイメージを作成しよう</h2>
+            <p>
+                <ul>
+                    <li>Dockerfileとは
+                        <ul>
+                            <li>Dockerイメージを作成する際に実行するコマンドをコード化して、1つのファイルにまとめたもの</li>
+                        </ul>
+                    </li>
+                    <li>Dockerfileのコマンド一覧（抜粋）</li>
+                </ul> 
+                <img src="media/docker10.png" alt="docker10.png" style="width: 100%;">               
+            </p>
             
+
+            <br>
+            <h2>Dockerfileを作成しよう（実践）</h2>
+            <p>
+                <ol>
+                    <li>ベースとなるイメージを指定しよう</li>
+                    <ul>
+                        <li>○○○　golang:1.18.3-alpine</li>
+                    </ul>
+                    <li>パッケージを更新しよう</li>
+                    <ul>
+                        <li>○○○　apk update</li>
+                    </ul>
+                    <li>作業ディレクトリの指定をしよう</li>
+                    <ul>
+                        <li>○○○　/server</li>
+                    </ul>
+                    <li>コンテナが作成された際に自動で起動するコマンドを追加しよう</li>
+                    <ul>
+                        <li>○○○　["python3","app.py"]</li>
+                    </ul>
+                </ol>
+            </p>
+
+
+            <br>
+            <h2>Docker composeを使ってみよう</h2>
+            <p>
+                <ul>
+                    <li>docker composeとは
+                        <ul>
+                            <li>構築に関わるコマンド文を1つのテキストファイルに書き込んで、一気に実行したり、停止・破棄できる仕組み</li>
+                        </ul>
+                    </li>
+                    <li>手打ちでコマンドを打つ場合</li>
+                    <img src="media/docker11.png" alt="docker11.png" style="width: 100%;">
+                    <li>docker-composeを使用する場合
+                        <img src="media/docker12.png" alt="docker12.png" style="width: 100%;">
+                        <ul>
+                            <li>定義ファイル（YAML形式)の記述ルール
+                                <ul>
+                                    <li>最初にdocker composeのバージョンを書く</li>
+                                    <li>親子関係はスペースで字下げする（タブ禁止）</li>
+                                    <li>スペースの数は「半角スペース1つ」でも「半角スペース2つ」でもOK（統一すること）</li>
+                                    <img src="media/docker13.png" alt="docker1.png" style="width: 100%;">
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>docker-compose.ymlのコマンド一覧（抜粋）</li>
+                    <img src="media/docker14.png" alt="docker14.png" style="width: 100%;">
+                </ul>           
+            </p>
+
+            <br>
+            <h2>実行してみよう</h2>
+            <p>
+                <ul>
+                    <li>「up」コマンド
+                        <ul>
+                            <li>定義ファイルに書かれた内容に従ってコンテナ、ボリューム、ネットワークを作成するコマンド</li>
+                            <li>docker-compose -f 定義ファイルのパス up -d</li>
+                            <li>docker-compose up -d（compose用フォルダがカレントディレクトリの場合）</li>
+                        </ul>
+                    </li>
+                    <li>「down」コマンド
+                        <ul>
+                            <li>コンテナとネットワークを停止・削除（ボリューム・イメージは削除しない）するコマンド</li>
+                            <li>docker-compose -f 定義ファイルのパス down</li>
+                            <li>docker-compose down</li>
+                        </ul>
+                    </li>
+                    <li>「stop」コマンド
+                        <ul>
+                            <li>コンテナを停止するコマンド</li>
+                            <li>docker-compose -f 定義ファイル stop</li>
+                            <li>docker-compose stop</li>
+                        </ul>
+                    </li>
+                </ul>                
+            </p>
+
+            <br>
+            <h2>最低限知っておくべきコマンド</h2>
+            <p>
+                <ul>
+                    <li>2017年1月にリリースされたv1.13で大幅な変更
+                        <ul>
+                            <li>docker直下のコマンドが増えすぎてわかりづらくなったため</li>
+                        </ul>
+                    </li>
+                    <li>docker &lt;何を&gt; &lt;どうするか&gt; でコマンドを入力しよう！</li>
+                </ul>
+                <img src="media/docker15.png" alt="docker1.png" style="width: 100%;">
+            </p>
         </div>
     </div>
 </div>

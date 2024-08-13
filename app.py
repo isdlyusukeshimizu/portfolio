@@ -14,6 +14,10 @@ def torikumi():
 def docker_lec():
     return render_template('docker_lec.html')
 
+@app.route('/make_portfolio')
+def make_portfolio():
+    return render_template('make_portfolio.html')
+
 @app.route('/media/<path:filename>')
 def media_files(filename):
     return send_from_directory('media', filename)
