@@ -1,3 +1,3 @@
 # my portfolio
 
-今後も成果物や、経験について追記していく予定です！
+I'll continue to add to the list of deliverables and our experience!
