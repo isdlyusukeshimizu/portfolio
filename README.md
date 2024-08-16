@@ -23,8 +23,9 @@ To run the application:
 
    ```bash
    $ python hello.py
+   ```
 
-## During Local Development
+## Production Environment
 
 The method for deploying to a production environment is explained on the following page:
 [Flask Documentation on Deployment](https://flask.palletsprojects.com/en/3.0.x/deploying/)
