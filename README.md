@@ -19,7 +19,7 @@ There are two ways to run `hello.py` on a development server:
     app.run(debug=True)
    ```
 
-To run the application:
+   To run the application:
 
    ```bash
    $ python hello.py
