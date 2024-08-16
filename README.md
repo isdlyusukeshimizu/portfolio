@@ -32,11 +32,11 @@ The method for deploying to a production environment is explained on the followi
 
 In a production environment, a WSGI server should be used. There are also methods to use it in combination with an HTTP server such as Apache (Reverse Proxy).
 
-Examples of WSGI servers (refer to the above page for details):
-Gunicorn
-Waitress
-mod_wsgi
-uWSGI
+Examples of WSGI servers (refer to the above page for details)
+- Gunicorn
+- Waitress
+- mod_wsgi
+- uWSGI
 
 ## Reverse Proxy Configuration with Apache Server
 
