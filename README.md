@@ -17,10 +17,11 @@ There are two ways to run `hello.py` on a development server:
    ```python
    if __name__ == "__main__":
     app.run(debug=True)
+   ```
 
 To run the application:
    ```bash
-   $ $ python hello.py
+   $ python hello.py
 
 ## During Local Development
 
