@@ -20,6 +20,7 @@ There are two ways to run `hello.py` on a development server:
    ```
 
 To run the application:
+
    ```bash
    $ python hello.py
 
