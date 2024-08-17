@@ -1,6 +1,6 @@
 # Flask Application Deployment
 
-
+## During Local Development
 
 The method for running an application with a development server is explained on the following page. Note that it should not be used in a production environment.
 ([Flask Documentation on Development Server](https://flask.palletsprojects.com/en/latest/server/))
